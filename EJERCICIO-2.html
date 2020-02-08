@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="content">
+        </div>
+        <script>
+            /*Se declara la variable myArray asignando el valor del arreglo*/
+            var myArray= [1,2,1,3,3,1,2,1,5,1];
+            /*Se obtiene el tamaño del arreglo*/
+            var tamArray = myArray.length; 
+            /*Recorro del 1 al 5 para ver cuántas veces se repite cada valor*/
+            for (i = 1; i <= 5; i++) { 
+                /*Se declara la variable contador para las veces que se repite i
+                 se inicia en 0 porque hasta ahora no hay coincidencias*/
+                var contador = 0;
+                /*Recorro el arreglo myArray en la variable j*/
+                for (j = 0; j < tamArray; j++) {
+                    /*Si el valor en esa posición de myArray es el valor en (i) aumento el contador*/
+                    if (myArray[j] == i) {
+                        contador++;
+                    } 
+                } 
+                /*i tiene el valor y contador las veces que se repite dentro del arreglo
+                asi que se imprime el valor de i*/
+                document.write(i+ ":");
+                /*Posteriormente se hace un recorrido a la variable contador*/
+                for (x = 0; x < contador; x++) { 
+                    /*y por cada iteración se imprime el '*'*/
+                    document.write('*');
+                }
+                /*Se crea un salto de linea al terminar el recorrido*/
+                document.write("<br/>");
+            }       
+        </script>
+    </body>
+</html>

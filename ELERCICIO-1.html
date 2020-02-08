@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="content">
+        </div>
+        <script>
+            /*Se declara la variable myArray y se le asigna el valor del arreglo*/
+            var myArray = [13,2,4,35,1];
+            /*se declara la siguiente variable para asignar como valor maximo el 0*/
+            var max = 0;
+            /*Se inicia el recorrido del arreglo en base a los valores de i*/
+            for(var i=0; i<(myArray.length); i++){
+                /*Se hace una condicionante para comparar el valor actual de la variable max cotra el valor del arreglo en cada posicion de acuerdo al recorrido*/
+                if(max < myArray[i]){
+                    /*En caso que el valor del arreglo en i sea mayor, se asigna dicho valor a la variable max*/
+                    max=myArray[i];
+                }
+            }
+            /*Se imprime el valor mas alto del arreglo*/
+            document.write(max);
+        </script>
+    </body>
+</html>

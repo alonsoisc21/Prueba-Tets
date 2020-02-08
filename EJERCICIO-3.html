@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="content">
+        </div>
+        <script>
+            /*Se declara la variable myArray y se asigna el valor del arreglo*/
+            var myArray = [1,2,2,4,5,6,7,8,8,8];
+            /*Se declara la variable que llevara el valor del conteo de las coincidencias inicializado en 0*/
+            var numconcidencia = 0;
+            /*Se declara la variable aux tomando en cuenta que al recorrer cada valor da como resultado una coincidencia y en caso de tener una secuencia esta variable se incrementara*/
+            var aux =1;
+            /*Se declara la variable valconcidencia pasando como valor el dato obtenido de la posicion 0 en el arreglo*/
+            var valconcidencia = myArray[0];
+            /*Se declara la variable teniendo como valor el tamaño del arreglo*/
+            var n = myArray.length-1; 
+            /*Se itera el arreglo en i*/
+            for (i = 0; i <n; i++) { 
+                /*Si el valor del arreglo en i es igual al siguiente valor del arreglo se incrementa el valor de la variable aux*/
+                if(myArray[i]==myArray[i+1]){
+                    aux++;
+                    /*Si el numero de coincidencia es menor al valor de aux se asigan a valcoincidencia el valor del arreglo en i y se asigna el valor de aux a la variable numcoincidencia*/
+                    if(numconcidencia<aux){
+                        valconcidencia=myArray[i];
+                        numconcidencia=aux;
+                    }
+                }
+                /*En caso que el siguiente valor del arreglo sea diferente se valida las variables de conteo de coincidencias*/
+                else{
+                    if(numconcidencia<aux){
+                        /*Si el numcoincidencia es menor a aux se asigna el valor del arreglo en i a la variable del valor de coincidencia y se asigna el valor de aux a numcoincidencia*/
+                        valconcidencia=myArray[i];
+                        numconcidencia=aux;
+                    }
+                    /*al terminar la validacion secuencial se reinicia el valor de aux en 1*/
+                    aux=1;
+                }
+            }    
+            /*Se imprime los resultados.*/
+            document.write("Longest : "+numconcidencia);
+            document.write("</br>")
+            document.write("Number : "+valconcidencia);
+        </script>
+    </body>
+</html>
